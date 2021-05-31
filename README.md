@@ -1,5 +1,8 @@
 ## 目录说明
 
+**详细报告**
+https://czardas42.github.io/post/ECPE/
+
 - ./ECPE_withBERT **改进的模型**
   
   **【参考论文】**
