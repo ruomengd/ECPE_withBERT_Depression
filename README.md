@@ -44,30 +44,34 @@
 
 #### Requirments
 
-**tensorflow-gpu  >= 1.11.0**   GPU version of TensorFlow.
+- tensorflow-gpu  >= 1.11.0
+- GPU version of TensorFlow.
 
 #### 方法
 
 
 1. 下载并解压BERT中文模型 
-        地址：  https://github.com/ymcui/Chinese-BERT-wwm
-      （选择一）chinese_wwm_ext_L-12_H-768_A-12
-      （选择二）chinese_bert_chinese_wwm_L-12_H-768_A-12
+地址：  https://github.com/ymcui/Chinese-BERT-wwm
+- （选择一）chinese_wwm_ext_L-12_H-768_A-12
+- （选择二）chinese_bert_chinese_wwm_L-12_H-768_A-12
 
 2. 句向量生成
-
-     生成句向量不需要做fine tune，使用预先训练好的模型即可,注意参数必须是一个list
+生成句向量不需要做fine tune，使用预先训练好的模型即可,注意参数必须是一个list
 
      
-
 
 ## ECPE_withBERT 模型
 
 ##### Step0：使用BERT预训练模型生成语料库词向量（可选）
 
 须预先启动 bert-as-service
+###### 基于新浪新闻的 ECPE 语料库
+`python BERT.py`
+###### 自定义数据
+1. 使用前提：将需要生成词向量的数据集的词语汇总为一个List,保存为同一目录下的wordList.txt;
+2. `python BERT_new.py`
+    调用 BERT-wwm 或 BERT-wwm-ext 为其生成词向量，并将其用于之后的 ECPE 任务
 
-- python BERT_new.py
 
 ##### Step1 (一共九种方法供选择):
 
@@ -97,8 +101,8 @@
 
 ##### 训练数据集
 
-./data_combine/fold*_train.txt
-./data_combine/fold*_testtxt
+./data_combine/fold_train.txt
+./data_combine/fold_test.txt
 
 ##### 结果保存
 
